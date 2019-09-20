@@ -1,5 +1,5 @@
 const a = `<ul>
-<li><a href="../index.html">0.Async</a></li>
+<li><a href="../index.html">objective</a></li>
 </ul>`;
 
 const createPdf = require('./c')
