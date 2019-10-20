@@ -3,7 +3,10 @@ const phantom = require("phantom");
 async function createPdf(url, name) {
   const instance = await phantom.create();
   const page = await instance.createPage();
-
+  url = url.replace(/[\u4e00-\u9fa5]+/,(matched)=>{
+    return encodeURIComponent(matched)
+  });
+  console.log(url)
   await page.property("viewportSize", { width: 1024, height: 768 });
 
   const status = await page.open(
